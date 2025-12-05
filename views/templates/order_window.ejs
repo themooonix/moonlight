@@ -1,0 +1,47 @@
+<div id="orderCheckoutModal" class="checkout-overlay">
+    <div class="checkout-container">
+        <span class="close-btn" onclick="closeCheckoutModal()">×</span>
+        <h2 class="checkout-title">Оформление заказа</h2>
+        <form id="checkoutForm" class="checkout-form">
+            <div class="form-section">
+                <h3>Контактные данные</h3>
+                <input type="text" id="customerName" placeholder="ФИО" required>
+                <input type="email" id="customerEmail" placeholder="Электронная почта" required>
+                <input type="tel" id="customerPhone" placeholder="Телефон" required>
+            </div>
+            <div class="form-section">
+                <h3>Адрес доставки</h3>
+                <input type="text" id="deliveryAddress" placeholder="Адрес доставки" required>
+                <input type="text" id="postalCode" placeholder="Почтовый индекс" required>
+            </div>
+            <div class="form-section">
+                <h3>Способ оплаты</h3>
+                <div class="payment-buttons">
+                    <button type="button" class="payment-btn active" data-payment="card">Кредитная карта</button>
+                    <button type="button" class="payment-btn" data-payment="cash">Наличные при получении</button>
+                    <button type="button" class="payment-btn" data-payment="online">Онлайн-оплата</button>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h2>Ваш заказ</h2>
+                <div id="orderItems"></div>
+                <hr />
+                <div class="summary-content">
+                    <div class="summary-item">
+                        <span>Товары на сумму</span>
+                        <span id="orderSubtotal">0 ₽</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Скидка по акции</span>
+                        <span id="orderDiscount">0 ₽</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Итого</span>
+                        <span id="orderTotalPrice">0 ₽</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="submit-order-btn">Подтвердить заказ</button>
+        </form>
+    </div>
+</div>

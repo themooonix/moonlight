@@ -1,5 +1,13 @@
 /* Stalinist One; Prosto One */
 @import url("https://fonts.googleapis.com/css2?family=Prosto+One&family=Stalinist+One&display=swap");
+/* Balsamiq Sans */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* remove the below if you don't want smooth scrolling */
+html,
+body {
+    scroll-behavior: smooth;
+}
 
 .catalog {
     position: relative;
@@ -30,7 +38,7 @@
 }
 
 .catalog-choose-nav a {
-    font-family: "Prosto One", serif;
+    font-family: 'Balsamiq Sans';
     padding: 0.6vw 1.5vw;
     margin: 5px 0;
     text-decoration: none;
@@ -69,13 +77,48 @@
     height: 15vw;
 
     align-items: center;
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .catalog-products-item img {
-    width: 100%;
-    height: 70%;
+    width: 75%;
+    height: 75%;
     margin-right: 1vw;
     border-radius: 10px;
+}
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+
+    /* Начальное состояние: невидимое */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Переход для плавного появления */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    /* Визуальное оформление */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #278e97;
+    border-radius: 10px;
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+/* Показываем кнопку при прокрутке */
+body.scrolled .top {
+    opacity: 1;
+    visibility: visible;
 }

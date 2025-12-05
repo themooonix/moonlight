@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/others/mini_logo.png">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -52,7 +53,9 @@
             <%- include('templates/modal_window.ejs') %>
         </main>
 
-        <%- include('templates/footer.ejs') %>
+        <%- include('templates/footer.ejs', { visitorCount: visitorCount }); %>
+
+        <a href="#" class="top"></a>
 </body>
 
 </html>

@@ -1,3 +1,13 @@
+// Функция для кнопки "Наверх"
+window.addEventListener('scroll', function() {
+    const body = document.body;
+    if (window.scrollY > 100) { // Показываем кнопку, если прокрутка больше 100px
+        body.classList.add('scrolled');
+    } else {
+        body.classList.remove('scrolled');
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const weightOptions = document.querySelectorAll('.weight-option');
     const weightItems = document.querySelectorAll('.weight-item');

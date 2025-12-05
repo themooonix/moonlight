@@ -1,8 +1,16 @@
 /* Stalinist One; Prosto One */
 @import url("https://fonts.googleapis.com/css2?family=Prosto+One&family=Stalinist+One&display=swap");
+/* Balsamiq Sans */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* remove the below if you don't want smooth scrolling */
+html,
+body {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: "Prosto One", serif;
+    font-family: 'Balsamiq Sans';
 }
 
 h1 {
@@ -47,7 +55,7 @@ h1 {
     cursor: pointer;
     width: 3vw;
     text-align: center;
-    font-family: "Prosto One", serif;
+    font-family: 'Balsamiq Sans';
 }
 
 .weight-option.active {
@@ -61,7 +69,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
-    font-family: "Prosto One", serif;
+    font-family: 'Balsamiq Sans';
 }
 
 .weight-list {
@@ -79,7 +87,7 @@ h1 {
     cursor: pointer;
     width: 3vw;
     text-align: center;
-    font-family: "Prosto One", serif;
+    font-family: 'Balsamiq Sans';
 }
 
 .weight-item.active {
@@ -185,4 +193,38 @@ h1 {
 
 .answer.active {
     display: block;
+}
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+
+    /* Начальное состояние: невидимое */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Переход для плавного появления */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    /* Визуальное оформление */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #278e97;
+    border-radius: 10px;
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+/* Показываем кнопку при прокрутке */
+body.scrolled .top {
+    opacity: 1;
+    visibility: visible;
 }

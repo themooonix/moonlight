@@ -1,3 +1,13 @@
+// Функция для кнопки "Наверх"
+window.addEventListener('scroll', function () {
+    const body = document.body;
+    if (window.scrollY > 100) { // Показываем кнопку, если прокрутка больше 100px
+        body.classList.add('scrolled');
+    } else {
+        body.classList.remove('scrolled');
+    }
+});
+
 // Функция для открытия модального окна
 function openModal(title, price, description, imageSrc) {
     document.getElementById('modalTitle').textContent = title;

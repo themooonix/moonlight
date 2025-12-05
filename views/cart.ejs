@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/others/mini_logo.png">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order_window.css">
     <link rel="stylesheet" href="css/cart.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="scripts/scripts.js"></script>
     <script src="scripts/cart.js"></script>
+    <script src="scripts/order_window.js"></script>
 
     <title>Корзина | MOONLIGHT</title>
 </head>
@@ -37,15 +40,16 @@
                         <span>Итого</span>
                         <span id="totalPrice">0 ₽</span>
                     </div>
-                    <button id="checkoutButton">Перейти к оформлению</button>
-                    <div class="bonus-info">
-                        Будет начислено <span id="bonus">0</span> бонусов
-                    </div>
+                    <button id="checkoutButton" class="order-button">Оформить заказ</button>
                 </div>
             </div>
+
+            <%- include('templates/order_window.ejs') %>
         </main>
 
-        <%- include('templates/footer.ejs') %>
+        <%- include('templates/footer.ejs', { visitorCount: visitorCount }); %>
+
+        <a href="#" class="top"></a>
 </body>
 
 </html>

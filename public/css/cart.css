@@ -1,3 +1,14 @@
+/* Stalinist One; Prosto One */
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&family=Stalinist+One&display=swap");
+/* Balsamiq Sans */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* remove the below if you don't want smooth scrolling */
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 .cart-container {
     display: flex;
     width: 92.8vw;
@@ -5,6 +16,8 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 5vw;
+    font-family: 'Balsamiq Sans';
 }
 
 #cartItems {
@@ -34,16 +47,56 @@
 }
 
 .cart-item img {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     margin-right: 20px;
+}
+
+.cart-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.quantity-control button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.quantity-control button:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity-control input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 5px;
 }
 
 .cart-summary {
     flex: 1;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #f7f7f7;
     border-radius: 10px;
+    position: relative;
+    min-height: 12vw;
 }
 
 .summary-item {
@@ -61,17 +114,56 @@
 }
 
 #checkoutButton {
-    width: 100%;
-    padding: 10px;
-    background-color: #000;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    font-family: 'Balsamiq Sans';
+    background-color: #278e97;
+    width: auto;
     color: #fff;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.bonus-info {
-    margin-top: 20px;
-    text-align: center;
-    color: #666;
+#checkoutButton:hover {
+    background-color: #145b62;
+}
+
+.top {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+
+    /* Начальное состояние: невидимое */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Переход для плавного появления */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    /* Визуальное оформление */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #278e97;
+    border-radius: 10px;
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+/* Показываем кнопку при прокрутке */
+body.scrolled .top {
+    opacity: 1;
+    visibility: visible;
 }
